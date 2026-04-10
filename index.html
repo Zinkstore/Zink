@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Zink</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d0d0d;
+    color: white;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: black;
+    position: sticky;
+    top: 0;
+}
+
+.menu-btn {
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* MENU */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.sidebar a {
+    display: block;
+    margin: 20px 0;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 45px;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* PRODUITS */
+.section {
+    padding: 40px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: #1a1a1a;
+    margin: 15px;
+    padding: 15px;
+    width: 250px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- MENU -->
+<div class="sidebar" id="menu">
+    <a href="#produits">👕 Produits</a>
+</div>
+
+<!-- HEADER -->
+<header>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="logo">Zink</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>ZINK</h1>
+    <p>Streetwear moderne 🔥</p>
+    <a href="#produits">
+        <button class="btn">Voir les produits</button>
+    </a>
+</section>
+
+<!-- PRODUITS -->
+<section class="section" id="produits">
+    <h2>Nos produits</h2>
+
+    <h3>Pulls</h3>
+    <div class="products">
+        <div class="card">
+            <img src="pull1.jpg">
+            <p>Pull Zink</p>
+        </div>
+        <div class="card">
+            <img src="pull2.jpg">
+            <p>Pull Zink</p>
+        </div>
+    </div>
+
+    <h3>Vestes</h3>
+    <div class="products">
+        <div class="card">
+            <img src="veste1.jpg">
+            <p>Veste Zink</p>
+        </div>
+        <div class="card">
+            <img src="veste2.jpg">
+            <p>Veste Zink</p>
+        </div>
+    </div>
+
+    <h3>T-shirts</h3>
+    <div class="products">
+        <div class="card">
+            <img src="tshirt1.jpg">
+            <p>T-shirt Zink</p>
+        </div>
+        <div class="card">
+            <img src="tshirt2.jpg">
+            <p>T-shirt Zink</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>Suivez-nous</h3>
+    <p>Instagram : @toncompte</p>
+    <p>TikTok : @toncompte</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
