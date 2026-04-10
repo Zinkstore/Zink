@@ -8,18 +8,24 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0d0d0d;
+    background: black;
     color: white;
 }
 
 /* HEADER */
 header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background: black;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+}
+
+.left {
+    display: flex;
+    align-items: center;
 }
 
 .menu-btn {
@@ -31,6 +37,11 @@ header {
 .logo {
     font-size: 22px;
     font-weight: bold;
+}
+
+.cart {
+    font-size: 20px;
+    cursor: pointer;
 }
 
 /* MENU */
@@ -52,32 +63,48 @@ header {
     text-decoration: none;
 }
 
+.sidebar a:hover {
+    color: #aaa;
+}
+
 .sidebar.active {
     left: 0;
 }
 
 /* HERO */
 .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("hero.jpg") center/cover;
     text-align: center;
-    padding: 80px 20px;
 }
 
 .hero h1 {
-    font-size: 45px;
+    font-size: 60px;
+    letter-spacing: 5px;
 }
 
 .btn {
-    padding: 12px 25px;
+    padding: 12px 30px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
     background: white;
     color: black;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
 }
 
 /* PRODUITS */
 .section {
-    padding: 40px;
+    padding: 80px 20px;
 }
 
 .products {
@@ -87,25 +114,29 @@ header {
 }
 
 .card {
-    background: #1a1a1a;
-    margin: 15px;
-    padding: 15px;
+    margin: 20px;
     width: 250px;
-    border-radius: 10px;
-    text-align: center;
+    overflow: hidden;
 }
 
 .card img {
     width: 100%;
-    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+.card p {
+    text-align: center;
 }
 
 /* FOOTER */
 footer {
-    background: black;
+    padding: 40px;
     text-align: center;
-    padding: 30px;
-    margin-top: 40px;
+    border-top: 1px solid #222;
 }
 </style>
 
@@ -115,60 +146,50 @@ footer {
 
 <!-- MENU -->
 <div class="sidebar" id="menu">
-    <a href="#produits">👕 Produits</a>
+    <a href="#catalogue">👕 Produits</a>
 </div>
 
 <!-- HEADER -->
 <header>
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-    <div class="logo">Zink</div>
+    <div class="left">
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <div class="logo">Zink</div>
+    </div>
+    <div class="cart">🛒</div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
     <h1>ZINK</h1>
-    <p>Streetwear moderne 🔥</p>
-    <a href="#produits">
-        <button class="btn">Voir les produits</button>
+    <p>Streetwear premium</p>
+    <a href="#catalogue">
+        <button class="btn">Voir la collection</button>
     </a>
 </section>
 
-<!-- PRODUITS -->
-<section class="section" id="produits">
-    <h2>Nos produits</h2>
+<!-- CATALOGUE -->
+<section class="section" id="catalogue">
 
-    <h3>Pulls</h3>
+    <h2>Pulls</h2>
     <div class="products">
         <div class="card">
             <img src="pull1.jpg">
             <p>Pull Zink</p>
         </div>
-        <div class="card">
-            <img src="pull2.jpg">
-            <p>Pull Zink</p>
-        </div>
     </div>
 
-    <h3>Vestes</h3>
+    <h2>Vestes</h2>
     <div class="products">
         <div class="card">
             <img src="veste1.jpg">
             <p>Veste Zink</p>
         </div>
-        <div class="card">
-            <img src="veste2.jpg">
-            <p>Veste Zink</p>
-        </div>
     </div>
 
-    <h3>T-shirts</h3>
+    <h2>T-shirts</h2>
     <div class="products">
         <div class="card">
             <img src="tshirt1.jpg">
-            <p>T-shirt Zink</p>
-        </div>
-        <div class="card">
-            <img src="tshirt2.jpg">
             <p>T-shirt Zink</p>
         </div>
     </div>
@@ -178,8 +199,8 @@ footer {
 <!-- FOOTER -->
 <footer>
     <h3>Suivez-nous</h3>
-    <p>Instagram : @toncompte</p>
-    <p>TikTok : @toncompte</p>
+    <p>Instagram : @mathis_spamz</p>
+    <p>TikTok : @mathis_spamz</p>
 </footer>
 
 <script>
